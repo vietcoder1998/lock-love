@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {MetaModule} from './meta/meta.module';
+// import {MetaModule} from './meta/meta.module';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -17,9 +17,10 @@ import {
 import { HomeComponent } from './home/home.component';
 import { ViewComponent } from './view/view.component';
 import { PromiseComponent } from './promise/promise.component';
-import { CommonComponent } from './common/common.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { CreateStatusComponent } from './home/create-status/create-status.component';
+import { ModalService } from './service/modal.service';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,11 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     ViewComponent,
     PromiseComponent,
-    CommonComponent,
-    LoginComponent
+    LoginComponent,
+    CreateStatusComponent
   ],
   imports: [
     BrowserAnimationsModule,
-    CommonModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -41,10 +41,10 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    MetaModule,
+    // MetaModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
